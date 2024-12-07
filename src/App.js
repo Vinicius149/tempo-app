@@ -10,11 +10,12 @@ function App() {
 //
   const buscaLocal = (event) => {
     // eslint-disable-next-line no-restricted-globals
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && local) {
       axios.get(url).then(async (response) => {
-        setDados(response.dados);
-        console.log(response.dados);
+        setDados(response.data);
+        console.log(response.data);
       });
+      setLocal('')
     }
   };
 
@@ -23,27 +24,27 @@ function App() {
       <div className="busca">
         <input
           type="text"
-          placeholder="Busque"
-          defaultValue={local}
-          onChange={(event) => buscaLocal(event.target.value)}
-          onKeyPress={buscaLocal}
+          value={local}
+          onChange={(event) => setLocal(event.target.value)}
+          onKeyDown={buscaLocal}
+          placeholder="Digite o nome da cidade"
         />
       </div>
       <div className="container">
         <div className="top">
           <div className="local">
-            <p>Londres</p>
+            <p>{dados.name}</p>
           </div>
           <div className="temp">
-            <h1>20°C</h1>
+            {dados.main ? <h1>{dados.main.temp}°C</h1> : null}
           </div>
         </div>
         <div className="descricao">
-          <p>Nublado</p>
+          {dados.weather ? <p>{dados.weather[0].description}</p> : null}
         </div>
         <div className="bottom">
           <div className="sensacao">
-            <p className="bold">18°C</p>
+            {dados.main ? <p className="bold">{dados.main.feels_like}</p> : null}
             <p>Sensação Térmica</p>
           </div>
           <div className="humidade">
