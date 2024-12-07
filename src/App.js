@@ -6,7 +6,7 @@ function App() {
   const [dados, setDados] = useState({});
   const [local, setLocal] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&lang=pt_br&APPID=3ef44a7a7c395682cfb2f9cb5024cded`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&APPID=3ef44a7a7c395682cfb2f9cb5024cded`;
 //
   const buscaLocal = (event) => {
     // eslint-disable-next-line no-restricted-globals
@@ -36,26 +36,29 @@ function App() {
             <p>{dados.name}</p>
           </div>
           <div className="temp">
-            {dados.main ? <h1>{dados.main.temp}°C</h1> : null}
+            {dados.main ? <h1>{dados.main.temp.toFixed()}°C</h1> : null}
           </div>
         </div>
         <div className="descricao">
           {dados.weather ? <p>{dados.weather[0].description}</p> : null}
         </div>
+
+        {dados.name != undefined &&
         <div className="bottom">
-          <div className="sensacao">
-            {dados.main ? <p className="bold">{dados.main.feels_like}</p> : null}
-            <p>Sensação Térmica</p>
-          </div>
-          <div className="humidade">
-            <p className="bold">78%</p>
-            <p>Humidade</p>
-          </div>
-          <div className="vento">
-            <p className="bold">38 KM/H</p>
-            <p>Vento</p>
-          </div>
+        <div className="sensacao">
+          {dados.main ? <p className="bold">{dados.main.feels_like}</p> : null}
+          <p>Sensação</p>
         </div>
+        <div className="humidade">
+          {dados.main ? <p className="bold">{dados.main.humidity}%</p>: null}
+          <p>Humidade do ar</p>
+        </div>
+        <div className="vento">
+          {dados.wind ? <p className="bold">{dados.wind.speed.toFixed()}Km\h</p> : null}
+          <p>Vento</p>
+         </div>
+        </div>
+        }
       </div>
     </div>
   );
