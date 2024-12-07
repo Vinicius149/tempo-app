@@ -6,7 +6,7 @@ function App() {
   const [dados, setDados] = useState({});
   const [local, setLocal] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&APPID=3ef44a7a7c395682cfb2f9cb5024cded`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&APPID={chaveAPI}`;
 //
   const buscaLocal = (event) => {
     // eslint-disable-next-line no-restricted-globals
