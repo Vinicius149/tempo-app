@@ -3,10 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/vinicius149/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/vinicius149/README-template?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/vinicius149/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/vinicius149/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/vinicius149/README-template?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
 
 > Projeto de uma aplicação de previsão do tempo para estudos em REACT.
 
