@@ -1,9 +1,8 @@
 # TEMPO-APP
 
-![GitHub repo size](https://img.shields.io/github/repo-size/vinicius149/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/vinicius149/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/vinicius149/README-template?style=for-the-badge)
-
+![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 > Projeto de uma aplicação de previsão do tempo para estudos em REACT.
 
