@@ -6,6 +6,11 @@
 
 > Projeto de uma aplicação de previsão do tempo para estudos em REACT.
 
+
+![tempo-app](<Captura de tela 2024-12-16 210234.png>)
+
+
+
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
