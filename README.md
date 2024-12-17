@@ -7,8 +7,7 @@
 > Projeto de uma aplicação de previsão do tempo para estudos em REACT.
 
 
-![tempo-app](<Captura de tela 2024-12-16 210234.png>)
-
+<img src="./src/assets/Screenshot-tempo-app.png" width="200">
 
 
 ### Ajustes e melhorias
