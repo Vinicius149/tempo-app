@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./index.css";
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [dados, setDados] = useState({});
   const [local, setLocal] = useState("");
+  const [clima, setClima] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&APPID={chaveAPI}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&APPID=${API_KEY}`;
 //
   const buscaLocal = (event) => {
     // eslint-disable-next-line no-restricted-globals
@@ -14,13 +17,20 @@ function App() {
       axios.get(url).then(async (response) => {
         setDados(response.data);
         console.log(response.data);
+        setClima(response.data.weather[0].main.toLowerCase()); 
+        setLocal('');
       });
-      setLocal('')
     }
   };
 
+  useEffect(() => { 
+    if (dados.weather) { 
+      setClima(dados.weather[0].main.toLowerCase()); 
+    } 
+  }, [dados]);
+
   return (
-    <div className="app">
+    <div className={`app ${clima}`}>
       <div className="busca">
         <input
           type="text"
